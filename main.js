@@ -1,4 +1,14 @@
-const { LinkedList, display, size, isEmpty, findPrevious, findLast, reverseList } = require('./linked-list');
+const {
+  LinkedList,
+  display,
+  size,
+  isEmpty,
+  findPrevious,
+  findLast,
+  reverseList,
+  thirdFromEnd,
+  middleOfList,
+} = require('./linked-list');
 
 function main() {
   const SLL = new LinkedList();
@@ -28,6 +38,8 @@ function main() {
   console.log(findLast(SLL));
   reverseList(SLL);
   display(SLL);
+  console.log(thirdFromEnd(SLL));
+  console.log(middleOfList(SLL));
 }
 main();
 

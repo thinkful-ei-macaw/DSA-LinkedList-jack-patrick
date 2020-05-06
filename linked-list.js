@@ -174,17 +174,51 @@ function findLast(list) {
 }
 
 function reverseList(list) {
-  // let current = list.head.next;
-  // let previous = list.head;
-  // previous.next = null;
-  // while (current !== null) {
-  //   previous = current;
-  //   current = current.next;
-  //   current.next = previous;
-  //   if (current.next === null) {
-  //     list.head = current;
-  //   }
-  // }
+  let current = list.head.next;
+  let previous = list.head;
+  let temp;
+  previous.next = null;
+  while (current.next !== null) {
+    temp = current.next;
+    current.next = previous;
+    previous = current;
+    current = temp;
+  }
+  current.next = previous;
+  list.head = current;
 }
 
-module.exports = { LinkedList, display, size, isEmpty, findPrevious, findLast, reverseList };
+function thirdFromEnd(list) {
+  let current = list.head;
+  if (list.head === null) return null;
+  if (current.next.next === null || current.next.next === undefined) {
+    return null;
+  }
+  while (current.next.next.next !== null) {
+    current = current.next;
+  }
+  return current.value;
+}
+
+function middleOfList(list) {
+  let currentFast = list.head;
+  let currentSlow = list.head;
+
+  while (currentFast !== null) {
+    currentSlow = currentSlow.next;
+    currentFast = currentFast.next.next;
+  }
+  return currentSlow.value;
+}
+
+module.exports = {
+  LinkedList,
+  display,
+  size,
+  isEmpty,
+  findPrevious,
+  findLast,
+  reverseList,
+  thirdFromEnd,
+  middleOfList,
+};
