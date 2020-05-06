@@ -1,29 +1,29 @@
 const LinkedList = require('./linked-list');
 
 function main() {
-  const SSL = new LinkedList();
+  const SLL = new LinkedList();
 
-  SSL.insertFirst('Apollo');
-  SSL.insertFirst('Boomer');
-  SSL.insertLast('Helo');
-  SSL.insertLast('Husker');
-  SSL.insertLast('Starbuck');
+  SLL.insertFirst('Apollo');
+  SLL.insertFirst('Boomer');
+  SLL.insertLast('Helo');
+  SLL.insertLast('Husker');
+  SLL.insertLast('Starbuck');
 
-  SSL.insertLast('Tauhida');
+  SLL.insertLast('Tauhida');
 
-  SSL.insertBefore('Athena', 'Starbuck');
-  SSL.insertBefore('Boomer', 'Starbuck');
+  SLL.insertBefore('Athena', 'Starbuck');
+  SLL.insertBefore('Boomer', 'Starbuck');
 
-  SSL.insertAfter('Hotdog', 'Starbuck');
-  SSL.insertAfter('Helo', 'Starbuck');
+  SLL.insertAfter('Hotdog', 'Starbuck');
+  SLL.insertAfter('Helo', 'Starbuck');
 
-  SSL.insertAt('Kat', 3);
+  SLL.insertAt('Kat', 3);
 
-  SSL.remove('Tauhida');
+  SLL.remove('Tauhida');
 
   // console.log(SSL.head.next.next.next.next.next.next);
-  console.log(SSL.head.next.next);
-  console.log(SSL.head.next.next.next.next.next.next.next.next.next);
+  console.log(SLL.head.next.next);
+  console.log(SLL.head.next.next.next.next.next.next.next.next.next);
 }
 
 main();
