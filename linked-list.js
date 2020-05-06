@@ -10,8 +10,7 @@ class LinkedList {
   }
 
   insertLast(item) {
-    // If the head is null, inserting at the "last" space, is really just the
-    // first / head
+    // If the head is null, inserting at the "last" space, is really just the first / head
     if (!this.head) {
       this.head = new _Node(item, null);
     } else {
