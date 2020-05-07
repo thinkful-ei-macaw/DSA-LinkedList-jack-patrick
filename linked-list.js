@@ -117,4 +117,74 @@ class LinkedList {
   }
 }
 
-module.exports = LinkedList;
+function display(list) {
+  let displayString = '';
+  let current = list.head;
+  while (current !== null) {
+    displayString += current.value + ' => ';
+    current = current.next;
+  }
+  displayString += current;
+  console.log(displayString);
+}
+
+function size(list) {
+  if (!list.head) {
+    return 0;
+  }
+  let sizeNumber = 0;
+  let current = list.head;
+  while (current !== null) {
+    sizeNumber++;
+    current = current.next;
+  }
+  return sizeNumber;
+}
+
+function isEmpty(list) {
+  return !list.head;
+}
+
+function findPrevious(list, item) {
+  let current = list.head;
+  if (current.next === null || current === null) {
+    return null;
+  }
+  while (current !== null) {
+    if (current.next.value === item) {
+      return current.value;
+    }
+    current = current.next;
+  }
+  return null;
+}
+
+function findLast(list) {
+  let current = list.head;
+  if (current === null) {
+    return null;
+  }
+  while (current !== null) {
+    if (current.next === null) {
+      return current.value;
+    }
+    current = current.next;
+  }
+  return null;
+}
+
+function reverseList(list) {
+  // let current = list.head.next;
+  // let previous = list.head;
+  // previous.next = null;
+  // while (current !== null) {
+  //   previous = current;
+  //   current = current.next;
+  //   current.next = previous;
+  //   if (current.next === null) {
+  //     list.head = current;
+  //   }
+  // }
+}
+
+module.exports = { LinkedList, display, size, isEmpty, findPrevious, findLast, reverseList };
